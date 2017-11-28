@@ -1,0 +1,23 @@
+{
+  "name": "appcroossplatform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrianoDevequi/AppCroossPlatform.git"
+  },
+  "author": "Adriano Devequi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrianoDevequi/AppCroossPlatform/issues"
+  },
+  "homepage": "https://github.com/AdrianoDevequi/AppCroossPlatform#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.4.0"
+  }
+}
