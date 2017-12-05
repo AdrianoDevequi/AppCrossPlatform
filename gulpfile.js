@@ -30,5 +30,5 @@ gulp.task("default", () => runSequence(
 	"min-js",
 	"min-css",
 	"min-html",
-	"npm-files"
+	"npm-files" 
 ));
