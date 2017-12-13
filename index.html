@@ -8,5 +8,27 @@
 </head>
 <body>
     
+    <script src="components/es6/es6samples.js"></script>
+<script>
+    const arrNumeros = [ 1, 1, 2, 3, 5, 8, 13, 21 ];
+    const arrPessoas = [
+        { nome: "Mario", idade: 10 },
+        { nome: "Luiz", idade: 24 },
+        { nome: "Wlad", idade: 34 },
+        { nome: "Adriano", idade: 21 },
+        { nome: "jaozin", idade: 10 },
+        { nome: "pedrim", idade: 5 },
+        { nome: "zezim", idade: 18 },
+        { nome: "chiqim", idade: 14 }
+    ];
+    const arrNomes = ["Mario","Luiz","Wlad","Adriano","jaozin","pedrim","zezim","chiqim"];
+    // Map
+    console.log( mapToMaisUm(arrNumeros) );
+    // Filter
+    console.log( findMaior18(arrPessoas) );
+    // Reduce
+    console.log( reduceArrToObj(arrNomes) );
+
+</script>
 </body>
 </html>
