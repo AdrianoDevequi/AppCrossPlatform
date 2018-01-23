@@ -7,28 +7,92 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script src="components/es6/es6samples.js"></script>
-<script>
-    const arrNumeros = [ 1, 1, 2, 3, 5, 8, 13, 21 ];
-    const arrPessoas = [
-        { nome: "Mario", idade: 10 },
-        { nome: "Luiz", idade: 24 },
-        { nome: "Wlad", idade: 34 },
-        { nome: "Adriano", idade: 21 },
-        { nome: "jaozin", idade: 10 },
-        { nome: "pedrim", idade: 5 },
-        { nome: "zezim", idade: 18 },
-        { nome: "chiqim", idade: 14 }
-    ];
-    const arrNomes = ["Mario","Luiz","Wlad","Adriano","jaozin","pedrim","zezim","chiqim"];
-    // Map
-    console.log( mapToMaisUm(arrNumeros) );
-    // Filter
-    console.log( findMaior18(arrPessoas) );
-    // Reduce
-    console.log( reduceArrToObj(arrNomes) );
 
-</script>
+    <style>
+    #elemento {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        width: 100vw;
+        height: 100vh;
+
+        background-color: #F2E8D5;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .number,
+    .c1{
+        height: 64px;
+        width: 64px;
+        background-color: white;
+        border: solid 1px gray; 
+    }
+    .c1{
+        background: linear-gradient(rgb(0, 225, 255), yellow);"
+    }
+    .c2{
+        background: linear-gradient(rgb(255, 0, 179), yellow);"
+    }
+    
+    .c3{
+        background: linear-gradient(rgb(11, 173, 6), yellow);"
+    }
+    .c4{
+        background: linear-gradient(rgb(255, 0, 0), yellow);"
+    }
+    .flex-row{
+        display: flex;
+        flex-direction: row;
+    }
+    .flex-column{
+        display: flex;
+        flex-direction: column;
+    }
+    .direction-start,.d-start{
+        justify-content: flex-start;
+    }
+    .direction-center,.d-center{
+        justify-content: center;
+    }
+    .direction-end,.d-end{
+        justify-content: flex-end;
+    }
+    .direction-betwen,.d-betwen{
+        justify-content: space-between;
+    }
+    .direction-around,.d-around{
+        justify-content: space-around;
+    }    
+    .counter-direction-start,.c-start{
+        align-items: flex-start;
+    }
+    .counter-direction-center,.c-center{
+        align-items: center;
+    }
+    .counter-direction-end,.c-end{
+        align-items: flex-end;
+    }
+
+    /* 1. criar grid 4x4*/
+
+    /* 2. Refazer o layout da aula sem utilizar classes que criamos remover classes e colocar nos ids
+        cada elemento tera o flex definido dentro da sua classe ou id 1x4.
+
+        2. Refazer o layout da aula utilizado as classes 4x4.
+     */
+    </style>
+
+    <div id="elemento">
+        <div class="c1 flex-column d-center c-center">1</div>
+        <div class="number c2 flex-column d-center c-center">2</div>
+        <div class="number c3 flex-column d-center c-center">3</div>
+        <div class="number c4 flex-column d-center c-center">4</div>
+    </div>
 </body>
+
 </html>
+
