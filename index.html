@@ -15,34 +15,78 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-
         width: 100vw;
-        height: 100vh;
-
-        background-color: #F2E8D5;
+        height: 30vh;
     }
+
     body{
         padding: 0;
         margin: 0;
+        background-color: #F2E8D5;
     }
-    .number,
-    .c1{
+    .number{
         height: 64px;
         width: 64px;
         background-color: white;
         border: solid 1px gray; 
     }
-    .c1{
-        background: linear-gradient(rgb(0, 225, 255), yellow);"
+    
+    .flex-column,
+    .d-center,
+    .c-center,
+    .number,
+    #n1{
+        background: linear-gradient(rgb(0, 81, 255), rgb(0, 153, 255));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: white;
+        border: solid 1px gray; 
     }
-    .c2{
-        background: linear-gradient(rgb(255, 0, 179), yellow);"
+    #n2{
+        background: linear-gradient(rgb(0, 255, 64), rgb(9, 143, 26));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: white;
+        border: solid 1px gray; 
+    }
+    #n3{
+        background: linear-gradient(rgb(255, 0, 242), rgb(105, 10, 77));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: white;
+        border: solid 1px gray; 
+    }
+    #n4{
+        background: linear-gradient(rgb(251, 255, 0), rgb(189, 186, 1));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: white;
+        border: solid 1px gray; 
+    }
+    .n2,.flex-column{
+        background: linear-gradient(rgb(255, 0, 179), yellow);
     }
     
-    .c3{
-        background: linear-gradient(rgb(11, 173, 6), yellow);"
+    .n3{
+        background: linear-gradient(rgb(11, 173, 6), yellow);
     }
-    .c4{
+    .n4{
         background: linear-gradient(rgb(255, 0, 0), yellow);"
     }
     .flex-row{
@@ -87,18 +131,27 @@
      */
     </style>
 
-
+        <div id="elemento">
+            <div id="n1">1</div>
+            <div id="n2">2</div>
+            <div id="n3">3</div>
+            <div id="n4">4</div>
+        </div>
+<hr>
     <div id="elemento">
         <div class="c1 flex-column d-center c-center">1</div>
         <div class="number c2 flex-column d-center c-center">2</div>
         <div class="number c3 flex-column d-center c-center">3</div>
         <div class="number c4 flex-column d-center c-center">4</div>
-02225446562
-1
     </div>
+    <div id="elemento">
+        <div class="c1 flex-column d-center c-center">1</div>
+        <div class="number c2 flex-column d-center c-center">2</div>
+        <div class="number c3 flex-column d-center c-center">3</div>
+        <div class="number c4 flex-column d-center c-center">4</div>
+    </div>
+
 </body>
-
-
 
 </html>
 
