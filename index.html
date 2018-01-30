@@ -7,152 +7,96 @@
     <title>Document</title>
 </head>
 <body>
-
-    <style>
-        
-    #elemento {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        width: 100vw;
-        height: 30vh;
-    }
-
+<style>
     body{
-        padding: 0;
         margin: 0;
-        background-color: #F2E8D5;
+        padding: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-template-areas:
+            "header" 
+            "banner" 
+            "content" 
+            "footer"
+            ;
+        grid-template-rows: 96px 1fr 1fr 300px;
+        grid-template-columns: 1fr;
     }
-    .number{
-        height: 64px;
-        width: 64px;
-        background-color: white;
-        border: solid 1px gray; 
-    }
-    
-    .flex-column,
-    .d-center,
-    .c-center,
-    .number,
-    #n1{
-        background: linear-gradient(rgb(0, 81, 255), rgb(0, 153, 255));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 64px;
-        width: 64px;
-        background-color: white;
-        border: solid 1px gray; 
-    }
-    #n2{
-        background: linear-gradient(rgb(0, 255, 64), rgb(9, 143, 26));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 64px;
-        width: 64px;
-        background-color: white;
-        border: solid 1px gray; 
-    }
-    #n3{
-        background: linear-gradient(rgb(255, 0, 242), rgb(105, 10, 77));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 64px;
-        width: 64px;
-        background-color: white;
-        border: solid 1px gray; 
-    }
-    #n4{
-        background: linear-gradient(rgb(251, 255, 0), rgb(189, 186, 1));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 64px;
-        width: 64px;
-        background-color: white;
-        border: solid 1px gray; 
-    }
-    .n2,.flex-column{
-        background: linear-gradient(rgb(255, 0, 179), yellow);
-    }
-    
-    .n3{
-        background: linear-gradient(rgb(11, 173, 6), yellow);
-    }
-    .n4{
-        background: linear-gradient(rgb(255, 0, 0), yellow);"
-    }
-    .flex-row{
+    #header{
+        grid-area: header;
         display: flex;
         flex-direction: row;
-    }
-    .flex-column{
-        display: flex;
-        flex-direction: column;
-    }
-    .direction-start,.d-start{
-        justify-content: flex-start;
-    }
-    .direction-center,.d-center{
-        justify-content: center;
-    }
-    .direction-end,.d-end{
-        justify-content: flex-end;
-    }
-    .direction-betwen,.d-betwen{
         justify-content: space-between;
-    }
-    .direction-around,.d-around{
-        justify-content: space-around;
-    }    
-    .counter-direction-start,.c-start{
-        align-items: flex-start;
-    }
-    .counter-direction-center,.c-center{
         align-items: center;
+        background-color: brown;
     }
-    .counter-direction-end,.c-end{
-        align-items: flex-end;
+    #content{
+        display: grid;
+        grid-area: content;
+        grid-template-areas:    
+            "conteudo sidebar";
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 1fr;
+        background-color: white;
     }
+    #footer{
+        display: grid;
+        grid-area: footer;
+        grid-template-areas:    
+            "footer";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        background-color: rgb(37, 37, 37);
+    }
+    #banner{
+        display: grid;
+        grid-template-areas: 
+            "texto imagem1"
+            "texto imagem2";
+        grid-template-rows: repeat(2, 300px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;    
+        background-color: gray;
+        padding: 5px;
+    }
+    .texto{
+        grid-area: texto;
+        margin: 10px;
+        background-color: chartreuse;
+    }
+    .imagem1{
+        grid-area: imagem1;
+        margin: 10px;
+        background-color: rgb(25, 0, 255);
+    }
+    .imagem2{
+        grid-area: imagem2;
+        margin: 10px;
+        background-color: rgb(255, 0, 179);
+    }
+    .conteudo{
+        grid-area: conteudo;
+        margin: 10px;
+    }
+    .sidebar{
+        grid-area: sidebar;
+        margin: 10px;
+        background-color: beige;
+    }
+</style>
+<section id="header">Header</section>
 
-    /* 1. criar grid 4x4*/
-
-    /* 2. Refazer o layout da aula sem utilizar classes que criamos remover classes e colocar nos ids
-        cada elemento tera o flex definido dentro da sua classe ou id 1x4.
-
-        2. Refazer o layout da aula utilizado as classes 4x4.
-     */
-    </style>
-
-        <div id="elemento">
-            <div id="n1">1</div>
-            <div id="n2">2</div>
-            <div id="n3">3</div>
-            <div id="n4">4</div>
-        </div>
-<hr>
-    <div id="elemento">
-        <div class="c1 flex-column d-center c-center">1</div>
-        <div class="number c2 flex-column d-center c-center">2</div>
-        <div class="number c3 flex-column d-center c-center">3</div>
-        <div class="number c4 flex-column d-center c-center">4</div>
-    </div>
-    <div id="elemento">
-        <div class="c1 flex-column d-center c-center">1</div>
-        <div class="number c2 flex-column d-center c-center">2</div>
-        <div class="number c3 flex-column d-center c-center">3</div>
-        <div class="number c4 flex-column d-center c-center">4</div>
-    </div>
-
+    <section id="banner">
+        <div class="texto">teste</div>
+        <div class="imagem1">imagem1</div>
+        <div class="imagem2">imagem2</div>
+    </section>
+<section id="content">
+    <div class="conteudo">Conteúdo</div>
+    <div class="sidebar">Sidebar</div>
+</section>
+<section id="footer">Footer</section>
 </body>
-
 </html>
 
 
