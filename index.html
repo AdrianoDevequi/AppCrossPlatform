@@ -25,11 +25,25 @@
 </body>
 
 <script>
-    const worker = new Worker("worker.js");
-    worker.onmessage = evt => {
-        console.log(`Result: ${ evt.data }`);
-        worker.terminate();
-    };
-    worker.postMessage([24, 11]);
+    function createHead(){
+        const worker = new Worker("worker.js");
+        worker.onmessage = evt => {
+            document.querySelector("thead").innerHTML = evt.data;
+            worker.terminate();
+        };
+
+        worker.postMessage("requestHead");
+    }
+    function createBody(){
+        const worker = new Worker("worker.js");
+        worker.onmessage = evt => {
+            document.querySelector("tbody").innerHTML = evt.data;
+            worker.terminate();
+        };
+
+        worker.postMessage("requestBody");
+    }
+    createHead();
+    createBody();
 </script>
 </html>
