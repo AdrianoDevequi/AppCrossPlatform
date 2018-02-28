@@ -8,10 +8,28 @@
 </head>
 
 <style>
-        
+    body{
+        position: relative;
+        padding: 0;
+        min-height: 100vh;
+        background-color: rgb(235, 235, 235);
+
+    }
 </style>
+
 <body>
-
-
+<table>
+    <thead></thead>
+    <tbody></tbody>
+</table>
 </body>
+
+<script>
+    const worker = new Worker("worker.js");
+    worker.onmessage = evt => {
+        console.log(`Result: ${ evt.data }`);
+        worker.terminate();
+    };
+    worker.postMessage([24, 11]);
+</script>
 </html>

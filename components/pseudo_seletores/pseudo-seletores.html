@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+    position: relative;
+    padding: 0;
+    min-height: 100vh;
+    background-color: rbg(235, 235, 235);
+     }
+     .item{
+         position: relative;
+         height: 64px;
+         width: 100%;
+         margin: 8px 0;
+         color: rbg(255, 255, 255);
+         background-color: rgb(255, 25, 0);
+         box-shadow: rgb(0,0,0, 0.25);
+         cursor: pointer;
+     }   
+    .item:nth-child(2n):hover::before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: rbga(255, 255, 255, 0.2);
+    } 
+
+    .item:nth-child(2n + 1):hover::after{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: rbga(255, 255, 255, 0.2);
+    }
+
+    .item[dorminhoco=true]{
+        background-color: rbg(255, 155, 0);         
+    }
+
+    .item[dorminhoco=false]{
+        background-color: rbg(0, 155, 255);         
+    }
+
+    .item:hover{
+        background-color: rbg(0, 255, 0);
+    }
+
+    .item:nth-child(2n){
+        background-color: rbg(255, 0, 0);
+    }
+
+    .item:not(:nth-child(2):nth-child(2n):hover){
+        background-color: rbg(255, 0, 221);
+    }
+
+    .item:first-of-type{
+        background-color: rbg(255, 0, 0);
+    }
+
+    .item:not(#div){
+        background-color: rbg(255, 0, 0);
+    }
+    .item:hover{
+        background-color: rbg(255, 0, 0);
+    }
+    body > div {
+        background-color: red !important;
+    }
+    .item div {
+        background-color: blue;
+    }
+</style>
+
+<body>
+
+    <div id="div1" class="item">
+        <div>Item 1</div>
+    </div>    
+    <div id="div2" class="item">
+        <div>Item 2</div>
+    </div>
+    <div id="div3" class="item">
+        <div>Item 3</div>
+    </div>
+    <div id="div4" class="item">
+        <div>Item 4</div>
+    </div>    
+    <div id="div5" class="item">
+        <div>Item 5</div>
+    </div>
+</body>
+
+<script>
+    document.querySelector("#div").setAttribute("dorminhoco", true);
+    document.querySelector("#div5").setAttribute("dorminhoco", false);
+    
+</script>
+
+
+</html>
