@@ -1,18 +1,18 @@
 
 function createHead () {
 	let head = "<tr>";
-	for(let i = 0; i < 100; i++){
-		head = `${ head } <th>${ i }<th>`;
+	for(let i = 0; i < 50; i++){
+		head = `${ head } <th>${ i }</th>`;
 	}
 	head = `${ head } </tr>`;
 	return head;
 }
 function createBody () {
 	let body = "";
-	for (let row = 0; row < 10000; row ++){
+	for (let row = 0; row < 100; row ++){
 		body = `${ body } <tr>`;
-		for(let cell = 0; cell < 100; cell++){
-			body = `${ body } <td>${ row } - ${ cell } </td>`
+		for(let cell = 0; cell < 50; cell++){
+			body = `${ body } <td>${ row } - ${ cell } </td>`;
 		}
 		body = `${ body } </tr>`;
 	}
