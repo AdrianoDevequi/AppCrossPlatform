@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        position: relative;
+        padding: 0;
+        min-height: 100vh;
+    }
+    
+    thead tr th{
+        height: 64px;
+        background-color: rgb(200, 200, 200);
+    }
+    tbody tr{
+        height: 40px;
+        background-color: rgb(245, 245, 245);
+    }
+    tbody tr:nth-child(2n){
+        background-color:  rgb(255, 255, 255);
+    }
+    tbody tr td{
+        text-align: center;
+        white-space: nowrap;
+    }
+</style>
+<div>
+    <div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<body>
+<table>
+    <thead></thead>
+    <tbody></tbody>
+</table>
+</body>
+
+<script>
+    // function createHead(){
+    //     const worker = new Worker("worker.js");
+    //     worker.onmessage = evt => {
+    //         document.querySelector("thead").innerHTML = evt.data;
+    //         worker.terminate();
+    //     };
+
+    //     worker.postMessage("requestHead");
+    // }
+    // function createBody(){
+    //     const worker = new Worker("worker.js");
+    //     worker.onmessage = evt => {
+    //         document.querySelector("tbody").innerHTML = evt.data;
+    //         worker.terminate();
+    //     };
+
+    //     worker.postMessage("requestBody");
+    // }
+    // createBody();
+    // createHead();
+    
+    const createHead = () => {
+        return new Promise((resolve,reject) =>{
+            const worker = new Worker("worker.js");   
+            worker.onmessage = evt => {
+                resolve(evt.data);
+                worker.terminate();
+        };
+        worker.postMessage("requestHead");
+        });
+    };
+    const createBody = () => {
+        return new Promise((resolve,reject) =>{
+            const worker = new Worker("worker.js");   
+            worker.onmessage = evt => {
+                resolve(evt.data);
+                worker.terminate();
+        };
+        worker.postMessage("requestBody");
+        });
+    };
+    const createTable = () => {
+         new Promise((resolve, reject) => {
+            createHead().then(headNode => {
+                createBody().then(bodyNode => {
+                    document.querySelector("thead").innerHTML = headNode;
+                    document.querySelector("tbody").innerHTML = bodyNode;
+
+                })
+            })
+        })
+    }
+
+    const createTableAsync = () => {
+            createHead().then(headNode => {
+                document.querySelector("thead").innerHTML = headNode;
+            })
+            createBody().then(bodyNode => {
+                document.querySelector("tbody").innerHTML = bodyNode;
+            })
+    }
+
+    const soma = (valor, valorSoma) => {
+        return new Promise((resolve, reject) => {
+           const resultado = valor + valorSoma;
+           resolve(resultado);
+        })
+    }
+    const subtracao = (valor, valorSubtracao) => {
+        return new Promise((resolve, reject) => {
+            const resultado = valor - valorSubtracao;
+            resolve(resultado);
+        })
+    }
+    const multiplicacao = (valor, valorMultiplicao) => {
+        return new Promise((resolve, reject) => {
+            const resultado = valor * valorMultiplicao;
+            resolve(resultado);
+        })
+    }
+    const divisao = (valor, valorDivisao) => {
+        return new Promise((resolve, reject) => {
+            if (valorDivisao == 0)
+                reject("Digite um valor maior que zero");
+            const resultado = valor / valorDivisao;
+            resolve(resultado);
+
+        }).catch(erro => {
+            return erro;
+        })
+    }
+    const obj = { valorBase: 56, valorSoma: 60, valorSubtracao: 20, valorMultiplicao: 30, valorDivisao: 10 }
+    const executaTudo = (obj) =>{
+        soma(obj.valorBase, obj.valorSoma).then(resultadoSoma => {
+            subtracao(resultadoSoma, obj.valorSubtracao).then(resultadoSubtracao =>{
+                multiplicacao(resultadoSubtracao, obj.valorMultiplicao).then(resultadoDivisao => {
+                    divisao(resultadoDivisao, obj.valorDivisao).then(resultadoFinal =>{
+                        console.log(resultadoFinal);
+                        return resultadoFinal;
+                    })
+                })
+            })
+        })
+
+    };
+    executaTudo(obj);
+
+   // createTableAsync();
+   // Alterar e substituir os nomes por nomes bons
+</script>
+</html>
