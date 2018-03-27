@@ -69,7 +69,7 @@
 				}
 			}
 			
-			$ngReduxProvider.createStoreWith({somaState: somaReducer, subtracaoState: subtracaoReducer});
+			$ngReduxProvider.createStoreWith({somaState: somaReducer, subtracaoState: subtracaoReducer, multiplicacaoState: multiplicacaoReducer});
 
 		});
 })();

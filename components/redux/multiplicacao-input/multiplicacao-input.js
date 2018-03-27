@@ -1,21 +1,21 @@
 (() => {
-	class SomaInput {
+	class MultiplicacaoInput {
 		constructor(){
-			this.templateUrl = "/components/redux/soma-input/soma-input.html";
+			this.templateUrl = "/components/redux/multiplicacao-input/multiplicacao-input.html";
 			this.bindings = {};
 		}
 
 		controller($scope, $ngRedux){
 			const stateConnection = $ngRedux.connect(state =>{
 				return {
-					valor1: state.somaState.valor1,
-					valor2: state.somaState.valor2
+					valor1: state.multiplicacaoState.valor1,
+					valor2: state.multiplicacaoState.valor2
 				};
 			})(this);
 
 			$scope.$on("$destroy", () => stateConnection);
 
-			this.executarSoma = () => $ngRedux.dispatch({
+			this.executarMultiplicacao = () => $ngRedux.dispatch({
 				type: "ADD_VALORES",
 				data: {
 					valor1: this.valor1,
@@ -25,5 +25,5 @@
 		}
 	}
 
-	angular.module("ngApp").component("somaInput", new SomaInput());
+	angular.module("ngApp").component("multiplicacaoInput", new MultiplicacaoInput());
 })();

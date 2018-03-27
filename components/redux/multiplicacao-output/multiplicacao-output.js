@@ -1,15 +1,15 @@
 (() => {
-	class SomaOutput {
+	class multiplicacaoOutput {
 		constructor() {
-			this.templateUrl = "/components/redux/soma-output/soma-output.html";
+			this.templateUrl = "/components/redux/multiplicacao-output/multiplicacao-output.html";
 			this.bidings = {};
 		}
 		controller($scope, $ngRedux){
 			const reduxConnection = $ngRedux.connect(state => {
 				return{
-					valor1: state.somaState.valor1,
-					valor2: state.somaState.valor2,
-					resultado: state.somaState.resultado
+					valor1: state.multiplicacaoState.valor1,
+					valor2: state.multiplicacaoState.valor2,
+					resultado: state.multiplicacaoState.resultado
 				};
 			})(this);
 			$scope.$on("$destroy", () => reduxConnection);
@@ -19,5 +19,5 @@
 			});
 		}
 	}
-	angular.module("ngApp").component("somaOutput", new SomaOutput());
+	angular.module("ngApp").component("multiplicacaoOutput", new multiplicacaoOutput());
 })();
