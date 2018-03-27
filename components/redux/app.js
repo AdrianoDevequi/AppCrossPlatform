@@ -52,8 +52,6 @@
 			
 			$ngReduxProvider.createStoreWith({somaState: somaReducer, subtracaoState: subtracaoReducer});
 
-			
-			
 		});
 })();
 
