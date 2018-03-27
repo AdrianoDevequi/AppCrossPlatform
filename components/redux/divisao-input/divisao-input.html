@@ -1,0 +1,23 @@
+<input type="number" ng-model="$ctrl.valor1">
+<span> / </span>
+<input type="number" ng-model="$ctrl.valor2" id="num">
+<button ng-click="$ctrl.executarDivisao()"  onclick="teste()">DIVISÃO</button>
+
+
+
+<script>
+    function teste() {
+        var x, text;
+    
+        // Get the value of the input field with id="numb"
+        x = document.getElementById("num").value;
+    
+        // If x is Not a Number or less than one or greater than 10
+        if (isNaN(x) || x <= 0) {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("mostra").innerHTML = text;
+    }
+    </script>
