@@ -16,7 +16,7 @@
 			$scope.$on("$destroy", () => stateConnection);
 
 			this.executarMultiplicacao = () => $ngRedux.dispatch({
-				type: "ADD_VALORES",
+				type: "MULTIPLICAR_VALORES",
 				data: {
 					valor1: this.valor1,
 					valor2: this.valor2
